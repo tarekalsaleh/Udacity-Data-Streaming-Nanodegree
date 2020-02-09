@@ -14,6 +14,7 @@ The following are required to complete this project:
 
 ## System Architecture
 The following components comprise the event streaming pipeline:
+![diagram](https://user-images.githubusercontent.com/60835161/74099465-307eda80-4b78-11ea-880a-bb25789ab708.png)
 
 ### Stream Data Producers
 1. Configure the train stations to emit some of the events that we need. The CTA has placed a sensor on each side of every train station that can be programmed to take an action whenever a train arrives at the station.
@@ -31,7 +32,6 @@ We will leverage Faust Stream Processing to transform the raw Stations table tha
 2. KSQL
 to aggregate turnstile data for each of our stations. When we produced turnstile data, we simply emitted an event, not a count. What would make this data more useful would be to summarize it by station so that downstream applications always have an up-to-date count.
 
-![diagram](https://user-images.githubusercontent.com/60835161/74099465-307eda80-4b78-11ea-880a-bb25789ab708.png)
 
 ## Directory Layout
 The project consists of two main directories, `producers` and `consumers`:
@@ -85,7 +85,7 @@ Docker compose will take a 3-5 minutes to start, depending on your hardware. Ple
 
 There are two pieces to the simulation, the `producer` and `consumer`. 
 
-However, when you are ready to verify the end-to-end system, it is critical that you open a terminal window for each piece and run them at the same time. **If you do not run both the producer and consumer at the same time you will not be able to successfully complete the project**.
+However, when you are ready to verify the end-to-end system, it is critical that you open a terminal window for each piece and run them at the same time. 
 
 #### To run the `producer`:
 
